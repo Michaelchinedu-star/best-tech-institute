@@ -1,0 +1,257 @@
+*{
+  box-sizing: border;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  font-family: "Times New Roman", Time, serif;
+  font-size: 1rem; /*1rem is equal to 16px. we use rem instead of px when building a responsive website */
+  line-height: 1.5;
+}
+
+.Header{
+  display:flex;
+  justify-content: space-between;
+  background-color: darkblue;
+  color: white;
+  padding-top: 0.3125rem ;
+  padding-left: 0.3125rem ;
+  padding-right: 1rem ;
+  padding-bottom: 1rem ;
+}
+
+ /*SOCIAL MEDIA ICON */
+.social-media-icon i {
+  padding-left: 0.125rem;
+  padding-right: 0.125rem ;
+  cursor: pointer;
+}
+
+.sis-psm-contact strong{
+  padding-left: 0.125rem;
+  padding-right: 0.125rem;
+}
+
+.logo img{
+  max-width:100%; /*TO Ensure image doesn't overflow its container */
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Change the behavior from inline [which images are by default] to block-level. */
+  margin: auto; /*Centers the image */
+  padding-top: 0.3125rem;
+  padding-bottom: 1rem;
+}
+
+      /*RESPONSIVE NAVIGATION */
+/* Add a black background color to the top navigation */
+.Navigation {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.Navigation a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.Navigation a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.Navigation a.active {
+  background-color: #04AA6D;
+  color: white;
+} 
+.Navigation a.active2 {
+  background-color: red;
+  color:aquamarine;
+}
+.Navigation a.mike{
+  background-color: blue;
+  color: blueviolet;
+}
+
+
+/* Hide the link that should open and close the topnav on small screens */
+.Navigation .icon {
+  display: none;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .Navigation a:not(:first-child) {display: none;}
+  .Navigation a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .Navigation.responsive {position: relative;}
+  .Navigation.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .Navigation.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.scrolling-text-contianer{
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.scrolling-text{
+  display: inline-block;
+  animation: scrollText 6s linear infinite; 
+}
+
+@keyframes scrollText {
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
+    
+/*SLIDESHOW SECTION */      
+/*this is a slide show copied from slideshow */
+
+.mySlides {display: none;}
+
+img {
+  vertical-align: middle;
+  height: 200px;
+}
+
+@media screen and (min-width: 768px){
+  .mySlides img {
+    height: 400px;
+  }
+}
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+/*APPLY AND REGISTER SECTION */
+.apply-and-register{
+  background-color: blue;
+  color: white;
+  padding: 0.625rem;
+  text-align: center;
+}
+
+.Apply{
+  border: 2px solid white;
+  width:200px;
+  padding: 0.625rem;
+  margin: auto;
+}
+
+.CALENDER{
+  text-align: Center;
+}
+
+.underline{
+  width: 200px;
+}
+
+@media screen and (min-width: 768px) {
+  .CALENDER{
+    display: grid;  /*  We use css grid */
+    grid-template-columns: auto auto;  /*Specify how many columns and the width of the columns*/
+  }
+  .item3 {
+    grid-column-start: 1;
+    grid-column-end: 3;   /*Span both columns*/
+  }
+}
+
+  /* LAPTOP MODE */ /* You have to reset the spanning of item3 because it was uttered  during tablet mode */
+@media screen and (min-width: 1024px) {
+  .item3 {
+    grid-column: auto;
+
+  }
+  .CALENDER {
+    grid-template-columns: auto auto auto;  /*change from 2 column to 3 */
+  }
+}
+
+.reference{
+  background-color: #333;
+  color: #04AA6D;
+  text-align: center;
+}
+
+@media screen and (min-width:768px) {
+  .reference{
+  display: flex;
+  justify-content: space-between; 
+  padding-left: 0.869rem;
+  padding-right: 0.869rem;
+  }
+}
+    
